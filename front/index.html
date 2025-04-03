@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino.Ua</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <picture class="background">
+            <source
+                    srcset="./img/bg/webp/image-4k.webp 1x, ./img/bg/webp/image-4k@2x.webp 2x, ./img/bg/webp/image-4k@3x.webp 3x"
+                    type="image/webp"
+                    media="(min-width: 1440px)"
+            >
+            <source
+                    srcset="./img/bg/webp/image-desktop.webp 1x, ./img/bg/webp/image-desktop@2x.webp 2x, ./img/bg/webp/image-desktop@3x.webp 3x"
+                    type="image/webp"
+                    media="(min-width: 1024px)"
+            >
+            <source
+                    srcset="./img/bg/webp/image-tablet.webp 1x, ./img/bg/webp/image-tablet@2x.webp 2x, ./img/bg/webp/image-tablet@3x.webp 3x"
+                    type="image/webp"
+                    media="(min-width: 768px)"
+            >
+
+            <source
+                    srcset="./img/bg/webp/image-mobile.webp 1x, ./img/bg/webp/image-mobile@2x.webp 2x, ./img/bg/webp/image-mobile@3x.webp 3x"
+                    type="image/webp"
+                    media="(max-width: 767px)"
+            >
+            <source
+                    srcset="./img/bg/jpg/image-4k.jpg 1x, ./img/bg/jpg/image-4k@2x.jpg 2x, ./img/bg/jpg/image-4k@3x.jpg 3x"
+                    media="(min-width: 1440px)"
+            >
+            <source
+                    srcset="./img/bg/jpg/image-desktop.jpg 1x, ./img/bg/jpg/image-desktop@2x.jpg 2x, ./img/bg/jpg/image-desktop@3x.jpg 3x"
+                    media="(min-width: 1024px)"
+            >
+            <source
+                    srcset="./img/bg/jpg/image-tablet.jpg 1x, ./img/bg/jpg/image-tablet@2x.jpg 2x, ./img/bg/jpg/image-tablet@3x.jpg 3x"
+                    media="(min-width: 768px)"
+            >
+            <source
+                    srcset="./img/bg/jpg/image-mobile.jpg 1x, ./img/bg/jpg/image-mobile@2x.jpg 2x, ./img/bg/jpg/image-mobile@3x.jpg 3x"
+                    media="(max-width: 767px)"
+            >
+            <img src="./img/bg/jpg/image-desktop.jpg" alt="Background">
+        </picture>
+        <img src="./img/image_box_height.jpg" alt="nature" class="image">
+        <div class="counter-box">
+            <button id="increase" type="button">increase</button>
+            <p id="count">0</p>
+            <button id="decrease" type="button">decrease</button>
+            <p id="last-update">update: 01.04.2025</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
