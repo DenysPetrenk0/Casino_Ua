@@ -3,9 +3,13 @@ const incrementBtn = document.getElementById('increase');
 const decrementBtn = document.getElementById('decrease');
 const lastUpdated = document.getElementById('last-update');
 
+const baseURL = window.location.hostname === 'localhost'
+	? 'http://localhost:5000'
+	: 'https://casinoua.vercel.app';
+
 async function fetchCounter() {
 	try {
-		const response = await fetch('http://localhost:5000/api/counter', {
+		const response = await fetch(`${baseURL}/api/counter`, {
 			method: 'GET',
 			headers: {
 				'Origin': 'http://localhost:5500'
@@ -34,7 +38,7 @@ async function fetchCounter() {
 
 async function updateCounter(action) {
 	try {
-		const response = await fetch('http://localhost:5000/api/counter', {
+		const response = await fetch(`${baseURL}/api/counter`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
