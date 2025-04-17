@@ -5,7 +5,7 @@ const lastUpdated = document.getElementById('last-update');
 
 const baseURL = window.location.hostname === 'localhost'
 	? 'http://localhost:5000'
-	: 'https://casinoua.vercel.app';
+	: 'https://casino-uaback.vercel.app';
 
 async function fetchCounter() {
 	try {
