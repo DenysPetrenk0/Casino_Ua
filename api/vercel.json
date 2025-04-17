@@ -2,22 +2,22 @@
   "version": 2,
   "builds": [
     {
-      "src": "front/**/*",
+      "src": "**/*",
       "use": "@vercel/static"
     },
     {
-      "src": "api/**/*",
+      "src": "**/*",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
+      "src": "/(.*)",
       "dest": "/api/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "/front/$1"
+      "dest": "/$1"
     }
   ]
 }
