@@ -41,39 +41,89 @@ button {
     justify-content: center;
     align-items: center;
     background: #4c79c2;
-    border: 2px solid #4c79c2;
+    border: none;
     color: #ffffff;
     padding: 10px 25px;
-    border-radius: 15px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 17px;
-    /*overflow: hidden;*/
     transition: color 0.4s ease;
+    overflow: hidden;
 }
 
-button::before {
-    content: '';
+button .border {
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    border: 2px solid red;
-    border-radius: 15px;
-    transform: scaleX(0) scaleY(0);
-    transform-origin: bottom right;
-    transition: transform 0.4s ease;
+    background-color: red;
 }
 
-button:hover {
-    background: #ffffff;
-    color: #4c79c2;
-    border: 2px solid transparent;
+.top {
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    height: 2px;
 }
 
-button:hover::before {
-    transform: scaleX(1) scaleY(1);
-    transform-origin: top left;
+.right {
+    width: 2px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    transform: translateY(-100%);
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bottom {
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transform: translateX(100%);
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.left {
+    width: 2px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover .top {
+    transform: translateX(0);
+    transition-delay: 0ms;
+}
+button:hover .right {
+    transform: translateY(0);
+    transition-delay: 500ms;
+}
+button:hover .bottom {
+    transform: translateX(0);
+    transition-delay: 1000ms;
+}
+button:hover .left {
+    transform: translateY(0);
+    transition-delay: 1500ms;
+}
+
+button:not(:hover) .left {
+    transform: translateY(100%);
+    transition-delay: 0ms;
+}
+button:not(:hover) .bottom {
+    transform: translateX(100%);
+    transition-delay: 500ms;
+}
+button:not(:hover) .right {
+    transform: translateY(-100%);
+    transition-delay: 1000ms;
+}
+button:not(:hover) .top {
+    transform: translateX(-100%);
+    transition-delay: 1500ms;
 }
 
 p {

@@ -48,11 +48,27 @@
             >
             <img src="./img/bg/jpg/image-desktop.jpg" alt="Background">
         </picture>
-        <img src="./img/image_box_height.jpg" alt="nature" class="image">
+        <picture>
+            <source media="(max-width: 600px)" srcset="./img/mobi.jpg">
+            <source media="(max-width: 1024px)" srcset="./img/tablet.jpg">
+            <img src="./img/comp.jpg" alt="device">
+        </picture>
         <div class="counter-box">
-            <button id="increase" type="button">increase</button>
+            <button id="increase" type="button">
+                increase
+                <span class="border top"></span>
+                <span class="border right"></span>
+                <span class="border bottom"></span>
+                <span class="border left"></span>
+            </button>
             <p id="count">0</p>
-            <button id="decrease" type="button">decrease</button>
+            <button id="decrease" type="button">
+                decrease
+                <span class="border top"></span>
+                <span class="border right"></span>
+                <span class="border bottom"></span>
+                <span class="border left"></span>
+            </button>
             <p id="last-update"></p>
         </div>
     </div>

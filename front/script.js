@@ -12,7 +12,7 @@ async function fetchCounter() {
 		const response = await fetch(`${baseURL}/api/counter`, {
 			method: 'GET',
 			headers: {
-				'Origin': 'http://localhost:5500'
+				'Origin': 'http://localhost:5000'
 			}
 		});
 
@@ -42,7 +42,7 @@ async function updateCounter(action) {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				'Origin': 'http://localhost:5500'
+				'Origin': 'http://localhost:5000'
 			},
 			body: JSON.stringify({ action })
 		});
