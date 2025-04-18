@@ -1,9 +1,9 @@
-import express from 'express';
-import { getCounter, updateCounter } from '../controllers/counterController.js';
-import { checkOrigin } from '../middleware/checkOrigin.js';
+const express = require('express');
+const { getCounter, updateCounter } = require('../controllers/counterController');
 
 const router = express.Router();
 
-router.get('/counter', checkOrigin, getCounter);
+router.get('/counter', getCounter);
 router.post('/counter', updateCounter);
-export default router;
+
+module.exports = router;

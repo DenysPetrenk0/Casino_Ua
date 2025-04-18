@@ -1,6 +1,6 @@
-import Counter from '../model/Counter.js';
+const Counter = require('../model/Counter');
 
-export const getCounter = async (req, res) => {
+const getCounter = async (req, res) => {
 	const counter = await Counter.findOne();
 	if (!counter) {
 		const newCounter = new Counter({ value: 0 });
@@ -10,7 +10,7 @@ export const getCounter = async (req, res) => {
 	res.json(counter);
 };
 
-export const updateCounter = async (req, res) => {
+const updateCounter = async (req, res) => {
 	const { action } = req.body;
 	const counter = await Counter.findOne();
 
@@ -27,3 +27,5 @@ export const updateCounter = async (req, res) => {
 	await counter.save();
 	res.json(counter);
 };
+
+module.exports = { getCounter, updateCounter };
