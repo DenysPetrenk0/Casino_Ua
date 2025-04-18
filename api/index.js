@@ -13,11 +13,11 @@ mongoose.connect(MONGO_URI)
 
 app.use(express.json());
 app.use(cors());
-// app.use(cors(	{
-// 	origin: [`${process.env.ALLOWED_ORIGIN}`],
-// 	methods: ["POST", "GET", "PUT", "DELETE", "PATCH"],
-// 	credentials: true
-// }));
+app.use(cors(	{
+ 	origin: [`${process.env.ALLOWED_ORIGIN}`],
+	methods: ["POST", "GET", "PUT", "DELETE", "PATCH"],
+ 	credentials: true
+}));
 
 app.get("/", (req, res) => {
 	res.json('hello')
