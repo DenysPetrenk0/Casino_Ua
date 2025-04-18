@@ -39,7 +39,6 @@ async function updateCounter(action) {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				'Origin': 'http://localhost:5000'
 			},
 			body: JSON.stringify({ action })
 		});
