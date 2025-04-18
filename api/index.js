@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const { PORT, MONGO_URI } = require('./config');
+const { PORT, MONGO_URI, ALLOWED_ORIGIN } = require('./config');
 const counterRoutes = require('./routes/counterRoutes');
 
 const app = express();
@@ -12,9 +12,10 @@ mongoose.connect(MONGO_URI)
 	.catch((err) => console.log('DB error', err));
 
 app.use(express.json());
-app.use(cors());
+
+console.log(ALLOWED_ORIGIN)
 app.use(cors(	{
- 	origin: [`${process.env.ALLOWED_ORIGIN}`],
+ 	origin: [ALLOWED_ORIGIN],
 	methods: ["POST", "GET", "PUT", "DELETE", "PATCH"],
  	credentials: true
 }));
