@@ -13,7 +13,6 @@ mongoose.connect(MONGO_URI)
 
 app.use(express.json());
 
-console.log(ALLOWED_ORIGIN)
 app.use(cors(	{
  	origin: [ALLOWED_ORIGIN],
 	methods: ["POST", "GET", "PUT", "DELETE", "PATCH"],
@@ -21,7 +20,7 @@ app.use(cors(	{
 }));
 
 app.get("/", (req, res) => {
-	res.json('hello')
+	res.json(ALLOWED_ORIGIN)
 })
 
 app.use('/api', counterRoutes);
